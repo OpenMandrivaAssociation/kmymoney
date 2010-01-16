@@ -1,6 +1,7 @@
 %define svnrel 1075755
 
-Summary: kmymoney
+Summary: The Personal Finances Manager
+# REMIND: leave it in contrib/testing until official beta version
 Name: kmymoney
 Version: 3.95.0
 Release: %mkrel -c %svnrel 1
