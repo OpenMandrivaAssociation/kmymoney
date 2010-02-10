@@ -1,11 +1,11 @@
-%define svnrel 1075755
+%define svnrel 1088392
 
 Summary: The Personal Finances Manager
 # REMIND: leave it in contrib/testing until official beta version
 Name: kmymoney
 Version: 3.95.0
 Release: %mkrel -c %svnrel 1
-Source0: %{name}-r%{svnrel}.tar.bz2
+Source0: %{name}-r%{svnrel}.tar.xz
 License: GPLv2+
 Group: Office
 Url: http://techbase.kde.org/Projects/KMyMoney
@@ -15,6 +15,7 @@ BuildRequires: libofx-devel
 BuildRequires: libaqbanking-devel
 BuildRequires: perl-Finance-Quote
 BuildRequires: libxml++2.6-devel
+BuildRequires: boost-devel
 Requires: perl-Finance-Quote
 
 %description 
