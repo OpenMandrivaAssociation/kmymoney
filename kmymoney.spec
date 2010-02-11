@@ -3,7 +3,7 @@
 Summary: The Personal Finances Manager
 Name: kmymoney
 Version: 3.95.0
-Release: %mkrel -c %svnrel 1
+Release: %mkrel -c %svnrel 2
 Source0: %{name}-r%{svnrel}.tar.xz
 License: GPLv2+
 Group: Office
