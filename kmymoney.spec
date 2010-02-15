@@ -30,6 +30,8 @@ KMyMoney Personal Finance Manager.
 %{_kde_services}/*.desktop
 %{_kde_servicetypes}/*.desktop
 %{_datadir}/mime/packages/*.xml
+%doc %_kde_docdir/HTML/en/doc
+%_kde_mandir/man1/kmymoney.1.lzma
 
 #-----------------------------------------------------------------------------
 
