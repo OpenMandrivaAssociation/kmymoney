@@ -1,10 +1,9 @@
-%define svnrel 1088392
 
 Summary: The Personal Finances Manager
 Name: kmymoney
-Version: 3.95.0
-Release: %mkrel -c %svnrel 2
-Source0: %{name}-r%{svnrel}.tar.xz
+Version: 3.96.0
+Release: %mkrel 1
+Source0: %{name}-%version.tar.bz2
 License: GPLv2+
 Group: Office
 Url: http://techbase.kde.org/Projects/KMyMoney
@@ -103,7 +102,7 @@ KMyMoney development files.
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{name}
+%setup -qn %{name}-%version
 
 %build
 %cmake_kde4
