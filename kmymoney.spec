@@ -1,8 +1,8 @@
 
 Summary: The Personal Finances Manager
 Name: kmymoney
-Version: 3.96.0
-Release: %mkrel 2
+Version: 3.96.1
+Release: %mkrel 1
 Source0: %{name}-%version.tar.bz2
 Patch0: kmymoney-3.96.0-en-doc-install.patch
 License: GPLv2+
