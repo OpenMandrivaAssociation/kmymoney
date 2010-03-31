@@ -1,10 +1,9 @@
 
 Summary: The Personal Finances Manager
 Name: kmymoney
-Version: 3.96.1
+Version: 3.97.0
 Release: %mkrel 1
-Source0: %{name}-%version.tar.bz2
-Patch0: kmymoney-3.96.0-en-doc-install.patch
+Source0: http://download.sourceforge.net/project/kmymoney2/KMyMoney-KDE4/%{version}/%{name}-%{version}.tar.bz2
 License: GPLv2+
 Group: Office
 Url: http://techbase.kde.org/Projects/KMyMoney
@@ -86,12 +85,30 @@ KMyMoney library.
 
 #-----------------------------------------------------------------------------
 
+%define kmm_widgets_major 4
+%define libkmm_widgets %mklibname kmm_widgets %{kmm_widgets_major}
+
+%package -n %{libkmm_widgets}
+Summary: KMyMoney library
+Group: System/Libraries
+
+%description -n %{libkmm_widgets}
+KMyMoney library.
+
+%files -n %{libkmm_widgets}
+%defattr(-,root,root)
+%{_kde_libdir}/libkmm_widgets.so.%{kmm_widgets_major}
+%{_kde_libdir}/libkmm_widgets.so.%{kmm_widgets_major}.*
+
+#-----------------------------------------------------------------------------
+
 %package devel
 Summary: KMyMoney Development library
 Group: Development/KDE and Qt
 Requires: %{libkmm_kdchart} = %{version}
 Requires: %{libkmm_mymoney} = %{version}
 Requires: %{libkmm_plugin} = %{version}
+Requires: %{libkmm_widgets} = %{version}
 
 %description devel
 KMyMoney development files.
@@ -105,7 +122,6 @@ KMyMoney development files.
 
 %prep
 %setup -qn %{name}-%version
-%patch0 -p0
 
 %build
 %cmake_kde4
