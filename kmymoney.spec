@@ -46,8 +46,7 @@ KMyMoney library.
 
 %files -n %{libkmm_kdchart}
 %defattr(-,root,root)
-%{_kde_libdir}/libkmm_kdchart.so.%{kmm_kdchart_major}
-%{_kde_libdir}/libkmm_kdchart.so.%{kmm_kdchart_major}.*
+%{_kde_libdir}/libkmm_kdchart.so.%{kmm_kdchart_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -63,8 +62,7 @@ KMyMoney library.
 
 %files -n %{libkmm_mymoney}
 %defattr(-,root,root)
-%{_kde_libdir}/libkmm_mymoney.so.%{kmm_mymoney_major}
-%{_kde_libdir}/libkmm_mymoney.so.%{kmm_mymoney_major}.*
+%{_kde_libdir}/libkmm_mymoney.so.%{kmm_mymoney_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -80,8 +78,7 @@ KMyMoney library.
 
 %files -n %{libkmm_plugin}
 %defattr(-,root,root)
-%{_kde_libdir}/libkmm_plugin.so.%{kmm_plugin_major}
-%{_kde_libdir}/libkmm_plugin.so.%{kmm_plugin_major}.*
+%{_kde_libdir}/libkmm_plugin.so.%{kmm_plugin_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -97,8 +94,7 @@ KMyMoney library.
 
 %files -n %{libkmm_widgets}
 %defattr(-,root,root)
-%{_kde_libdir}/libkmm_widgets.so.%{kmm_widgets_major}
-%{_kde_libdir}/libkmm_widgets.so.%{kmm_widgets_major}.*
+%{_kde_libdir}/libkmm_widgets.so.%{kmm_widgets_major}*
 
 #-----------------------------------------------------------------------------
 
