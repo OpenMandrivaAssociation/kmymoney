@@ -1,20 +1,19 @@
-
-Summary: The Personal Finances Manager
-Name: kmymoney
-Version: 3.97.1
-Release: %mkrel 2.1114730.1
-Source0: http://download.sourceforge.net/project/kmymoney2/KMyMoney-KDE4/%{version}/kmymoney-r1114730.tar.bz2
-License: GPLv2+
-Group: Office
-Url: http://techbase.kde.org/Projects/KMyMoney
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: kdepimlibs4-devel
-BuildRequires: libofx-devel
-BuildRequires: libaqbanking-devel
-BuildRequires: perl-Finance-Quote
-BuildRequires: libxml++2.6-devel
-BuildRequires: boost-devel
-Requires: perl-Finance-Quote
+Summary:	The Personal Finances Manager
+Name:		kmymoney
+Version:	3.97.1
+Release:	%mkrel 2.1114730.1
+Source0:	http://download.sourceforge.net/project/kmymoney2/KMyMoney-KDE4/%{version}/kmymoney-r1114730.tar.bz2
+License:	GPLv2+
+Group:		Office
+Url:		http://techbase.kde.org/Projects/KMyMoney
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	kdepimlibs4-devel
+BuildRequires:	libofx-devel
+BuildRequires:	libaqbanking-devel
+BuildRequires:	perl-Finance-Quote
+BuildRequires:	libxml++2.6-devel
+BuildRequires:	boost-devel
+Requires:	perl-Finance-Quote
 
 %description 
 KMyMoney Personal Finance Manager.
