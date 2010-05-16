@@ -1,8 +1,8 @@
 Summary:	The Personal Finances Manager
 Name:		kmymoney
-Version:	3.97.2
-Release:	%mkrel 1.1119473.1
-Source0:	http://download.sourceforge.net/project/kmymoney2/KMyMoney-KDE4/%{version}/kmymoney-r1119473.tar.bz2
+Version:	3.98.0
+Release:	%mkrel 1
+Source0:	http://download.sourceforge.net/project/kmymoney2/KMyMoney-KDE4/%{version}/kmymoney-%{version}.tar.bz2
 License:	GPLv2+
 Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
@@ -29,6 +29,7 @@ KMyMoney Personal Finance Manager.
 %{_kde_services}/*.desktop
 %{_kde_servicetypes}/*.desktop
 %{_datadir}/mime/packages/*.xml
+%{_kde_mandir}/man1/*
 
 #-----------------------------------------------------------------------------
 
@@ -115,7 +116,7 @@ KMyMoney development files.
 #-----------------------------------------------------------------------------
 
 %prep
-%setup -qn %{name}
+%setup -qn %{name}-%{version}
 
 %build
 %cmake_kde4
