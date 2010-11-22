@@ -10,7 +10,7 @@ Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
 BuildRequires:	kdepimlibs4-devel
 BuildRequires:	libofx-devel
-#BuildRequires:	libaqbanking-devel
+BuildRequires:	libaqbanking-devel
 BuildRequires:	libxml++2.6-devel
 BuildRequires:	boost-devel
 BuildRequires:	perl-Finance-Quote
