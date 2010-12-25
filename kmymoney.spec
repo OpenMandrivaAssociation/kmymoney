@@ -1,6 +1,6 @@
 Summary:	The Personal Finances Manager
 Name:		kmymoney
-Version:	4.5.1
+Version:	4.5.2
 Release:	%mkrel 1
 Source0:	http://download.sourceforge.net/project/kmymoney2/KMyMoney-KDE4/%{version}/kmymoney-%{version}.tar.bz2
 Patch0:     	kmymoney-3.98.0-fix-desktop-file.patch
