@@ -1,10 +1,11 @@
 Summary:	The Personal Finances Manager
 Name:		kmymoney
 Version:	4.5.3
-Release:	%mkrel 2
+Release:	%mkrel 3
 Source0:	http://download.sourceforge.net/project/kmymoney2/KMyMoney-KDE4/%{version}/kmymoney-%{version}.tar.bz2
 Patch0:     	kmymoney-3.98.0-fix-desktop-file.patch
 Patch1:		kselectdatabasedlg.diff
+Patch2:		kmymoney.desktop.patch
 License:	GPLv2+
 Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
@@ -120,6 +121,7 @@ KMyMoney development files.
 %setup -qn %{name}-%{version}
 %patch0 -p0
 %patch1 -p0
+%patch2 -p0
 
 %build
 %cmake_kde4
