@@ -1,7 +1,7 @@
 Summary:	The Personal Finances Manager
 Name:		kmymoney
 Version:	4.6.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 Source0:	http://download.sourceforge.net/project/kmymoney2/KMyMoney-KDE4/%{version}/kmymoney-%{version}.tar.bz2
 Patch0:     	kmymoney-3.98.0-fix-desktop-file.patch
 Patch1:		kselectdatabasedlg.diff
@@ -20,7 +20,7 @@ BuildRequires:	doxygen
 BuildRequires:	libxml2-devel
 BuildRequires:	fdupes
 BuildRequires:	libalkimia-devel
-BuildRequires:	libgmpxx-devel
+BuildRequires:	gmpxx-devel
 Requires:	perl-Finance-Quote
 
 %description 
