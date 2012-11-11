@@ -1,0 +1,10 @@
+--- kmymoney/dialogs/kselectdatabasedlg.cpp	2010-08-16 03:52:22.000000000 -0700
++++ kmymoney/dialogs/kselectdatabasedlg.cpp.thomas	2010-09-13 20:26:24.000000000 -0700
+@@ -55,6 +55,7 @@
+   m_requiredFields = 0;
+   m_url = openURL;
+   m_mode = openMode;
++  m_sqliteSelected = false;
+   m_widget->checkPreLoad->setEnabled(openMode == QIODevice::ReadWrite);
+ }
+ 
