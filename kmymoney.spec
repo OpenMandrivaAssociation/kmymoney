@@ -30,6 +30,7 @@ KMyMoney Personal Finance Manager.
 %{_kde_libdir}/kde4/*.so
 %{_kde_appsdir}/*
 %{_kde_datadir}/config.kcfg/*.kcfg
+%{_kde_datadir}/config/*
 %{_kde_applicationsdir}/*.desktop
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_services}/*.desktop
