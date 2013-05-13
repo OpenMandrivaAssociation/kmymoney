@@ -10,13 +10,13 @@ License:	GPLv2+
 Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
 BuildRequires:	kdepimlibs4-devel
-BuildRequires:	libofx-devel
-BuildRequires:	libaqbanking-devel
+BuildRequires:	pkgconfig(libofx)
+BuildRequires:	pkgconfig(aqbanking)
 BuildRequires:	libxml++2.6-devel
 BuildRequires:	boost-devel
 BuildRequires:	perl-Finance-Quote
 BuildRequires:	doxygen
-BuildRequires:	libxml2-devel
+BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	fdupes
 BuildRequires:	libalkimia-devel
 BuildRequires:	gmpxx-devel
