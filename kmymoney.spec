@@ -1,7 +1,7 @@
 Summary:	The Personal Finances Manager
 Name:		kmymoney
 Version:	4.6.3
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
@@ -21,6 +21,7 @@ BuildRequires:	pkgconfig(libofx)
 BuildRequires:	pkgconfig(libxml++-2.6)
 BuildRequires:	pkgconfig(libxml-2.0)
 Requires:	perl-Finance-Quote
+Requires:	gwenhywfar-tools
 
 %description 
 KMyMoney Personal Finance Manager.
