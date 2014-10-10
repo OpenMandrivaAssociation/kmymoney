@@ -37,7 +37,6 @@ KMyMoney Personal Finance Manager.
 %{_kde_servicetypes}/*.desktop
 %{_datadir}/mime/packages/*.xml
 %{_datadir}/appdata/*.xml
-%{_kde_mandir}/man1/*
 
 #-----------------------------------------------------------------------------
 
