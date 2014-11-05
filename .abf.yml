@@ -1,4 +1,5 @@
 removed_sources:
   kmymoney-4.6.3.tar.bz2: 52faa3938c77b1ef513d1a46f5545ed823595c51
-sources:
   kmymoney-4.7.0.tar.xz: 2e9ddb4f38c0cccd17a8646d1d0a6ce6618ed6ae
+sources:
+  kmymoney-4.7.1.tar.xz: 50a231c659ac6209c1c5f68861bf8a5f597587ea
