@@ -1,13 +1,11 @@
 Summary:	The Personal Finances Manager
 Name:		kmymoney
-Version:	4.7.1
+Version:	4.8.0
 Release:	0.1
 License:	GPLv2+
 Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
 Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.xz
-Patch0:		kmymoney-3.98.0-fix-desktop-file.patch
-#Patch1:		mymoneydatabasemgrtest.patch
 
 BuildRequires:	doxygen
 BuildRequires:	perl-Finance-Quote
