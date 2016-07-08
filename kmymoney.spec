@@ -6,6 +6,7 @@ License:	GPLv2+
 Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
 Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.xz
+Source2:	CMakeFindDependencyMacro.cmake
 Patch1:		kmymoney-4.8.0-upstream_fix_build.patch
 Patch2:		kmymoney-4.8.0-fix-libkmm_payeeidentifier-soversion.patch
 BuildRequires:	doxygen
@@ -183,6 +184,8 @@ KMyMoney development files.
 %prep
 %setup -q
 %apply_patches
+
+cp %SOURCE2 cmake/modules
 
 %build
 export LIBICAL_BASE=/usr
