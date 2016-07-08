@@ -1,12 +1,13 @@
 Summary:	The Personal Finances Manager
 Name:		kmymoney
 Version:	4.8.0
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
 Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.xz
 Patch1:		kmymoney-4.8.0-upstream_fix_build.patch
+Patch2:		kmymoney-4.8.0-fix-libkmm_payeeidentifier-soversion.patch
 BuildRequires:	doxygen
 BuildRequires:	perl-Finance-Quote
 BuildRequires:	boost-devel
@@ -98,6 +99,21 @@ KMyMoney library.
 
 #-----------------------------------------------------------------------------
 
+%define kmm_payeeidentifier_major 4
+%define libkmm_payeeidentifier %mklibname kmm_payeeidentifier %{kmm_payeeidentifier_major}
+
+%package -n %{libkmm_payeeidentifier}
+Summary: KMyMoney library
+Group: System/Libraries
+
+%description -n %{libkmm_payeeidentifier}
+KMyMoney library.
+
+%files -n %{libkmm_payeeidentifier}
+%{_kde_libdir}/libkmm_payeeidentifier.so.%{kmm_payeeidentifier_major}*
+
+#-----------------------------------------------------------------------------
+
 %define payeeidentifier_iban_bic_major 4
 %define libpayeeidentifier_iban_bic %mklibname payeeidentifier_iban_bic %{payeeidentifier_iban_bic_major}
 
@@ -150,6 +166,7 @@ Requires:	%{libkmm_kdchart} = %{version}
 Requires:	%{libkmm_mymoney} = %{version}
 Requires:	%{libkmm_plugin} = %{version}
 Requires:	%{libkmm_widgets} = %{version}
+Requires:	%{libkmm_payeeidentifier} = %{version}
 Requires:	%{libpayeeidentifier_iban_bic} = %{version}
 Requires:	%{libpayeeidentifier_iban_bic_widgets} = %{version}
 Requires:	%{libpayeeidentifier_nationalAccount} = %{version}
