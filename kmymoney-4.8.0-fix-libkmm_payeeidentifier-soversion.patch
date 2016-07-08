@@ -1,0 +1,12 @@
+diff -Nru a/kmymoney/mymoney/payeeidentifier/CMakeLists.txt b/kmymoney/mymoney/payeeidentifier/CMakeLists.txt
+--- a/kmymoney/mymoney/payeeidentifier/CMakeLists.txt	2016-06-14 21:16:15.000000000 +0200
++++ b/kmymoney/mymoney/payeeidentifier/CMakeLists.txt	2016-06-29 13:06:24.609025868 +0200
+@@ -23,6 +23,8 @@
+   ${CMAKE_CURRENT_BINARY_DIR}
+ )
+ 
++set_target_properties( kmm_payeeidentifier PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )
++
+ install( TARGETS kmm_payeeidentifier
+   ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 

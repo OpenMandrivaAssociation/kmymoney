@@ -6,7 +6,8 @@ License:	GPLv2+
 Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
 Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.xz
-
+Patch1:		kmymoney-4.8.0-upstream_fix_build.patch
+Patch2:		kmymoney-4.8.0-fix-libkmm_payeeidentifier-soversion.patch
 BuildRequires:	doxygen
 BuildRequires:	perl-Finance-Quote
 BuildRequires:	boost-devel
@@ -32,9 +33,9 @@ KMyMoney Personal Finance Manager.
 %{_kde_applicationsdir}/*.desktop
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_services}/*.desktop
+%{_kde_services}/ibanbicdata/germany.desktop
 %{_kde_servicetypes}/*.desktop
 %{_datadir}/mime/packages/*.xml
-%{_datadir}/appdata/*.xml
 
 #-----------------------------------------------------------------------------
 
@@ -98,6 +99,66 @@ KMyMoney library.
 
 #-----------------------------------------------------------------------------
 
+%define kmm_payeeidentifier_major 4
+%define libkmm_payeeidentifier %mklibname kmm_payeeidentifier %{kmm_payeeidentifier_major}
+
+%package -n %{libkmm_payeeidentifier}
+Summary: KMyMoney library
+Group: System/Libraries
+
+%description -n %{libkmm_payeeidentifier}
+KMyMoney library.
+
+%files -n %{libkmm_payeeidentifier}
+%{_kde_libdir}/libkmm_payeeidentifier.so.%{kmm_payeeidentifier_major}*
+
+#-----------------------------------------------------------------------------
+
+%define payeeidentifier_iban_bic_major 4
+%define libpayeeidentifier_iban_bic %mklibname payeeidentifier_iban_bic %{payeeidentifier_iban_bic_major}
+
+%package -n %{libpayeeidentifier_iban_bic}
+Summary: KMyMoney library
+Group: System/Libraries
+
+%description -n %{libpayeeidentifier_iban_bic}
+KMyMoney library.
+
+%files -n %{libpayeeidentifier_iban_bic}
+%{_kde_libdir}/libpayeeidentifier_iban_bic.so.%{payeeidentifier_iban_bic_major}*
+
+#-----------------------------------------------------------------------------
+
+%define payeeidentifier_iban_bic_widgets_major 4
+%define libpayeeidentifier_iban_bic_widgets %mklibname payeeidentifier_iban_bic_widgets %{payeeidentifier_iban_bic_widgets_major}
+
+%package -n %{libpayeeidentifier_iban_bic_widgets}
+Summary: KMyMoney library
+Group: System/Libraries
+
+%description -n %{libpayeeidentifier_iban_bic_widgets}
+KMyMoney library.
+
+%files -n %{libpayeeidentifier_iban_bic_widgets}
+%{_kde_libdir}/libpayeeidentifier_iban_bic_widgets.so.%{payeeidentifier_iban_bic_widgets_major}*
+
+#-----------------------------------------------------------------------------
+
+%define payeeidentifier_nationalAccount_major 4
+%define libpayeeidentifier_nationalAccount %mklibname payeeidentifier_nationalAccount %{payeeidentifier_nationalAccount_major}
+
+%package -n %{libpayeeidentifier_nationalAccount}
+Summary: KMyMoney library
+Group: System/Libraries
+
+%description -n %{libpayeeidentifier_nationalAccount}
+KMyMoney library.
+
+%files -n %{libpayeeidentifier_nationalAccount}
+%{_kde_libdir}/libpayeeidentifier_nationalAccount.so.%{payeeidentifier_nationalAccount_major}*
+
+#-----------------------------------------------------------------------------
+
 %package devel
 Summary:	KMyMoney Development library
 Group:		Development/KDE and Qt
@@ -105,6 +166,10 @@ Requires:	%{libkmm_kdchart} = %{version}
 Requires:	%{libkmm_mymoney} = %{version}
 Requires:	%{libkmm_plugin} = %{version}
 Requires:	%{libkmm_widgets} = %{version}
+Requires:	%{libkmm_payeeidentifier} = %{version}
+Requires:	%{libpayeeidentifier_iban_bic} = %{version}
+Requires:	%{libpayeeidentifier_iban_bic_widgets} = %{version}
+Requires:	%{libpayeeidentifier_nationalAccount} = %{version}
 
 %description devel
 KMyMoney development files.
