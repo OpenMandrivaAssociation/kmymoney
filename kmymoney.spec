@@ -18,6 +18,7 @@ BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(LibAlkimia5)
 BuildRequires:	cmake(KChart)
 BuildRequires:	cmake(Qt5Core) cmake(Qt5DBus) cmake(Qt5Widgets) cmake(Qt5Svg) cmake(Qt5Sql) cmake(Qt5Xml) cmake(Qt5Test) cmake(Qt5PrintSupport)
+BuildRequires:	cmake(Qt5WebEngineWidgets)
 BuildRequires:	cmake(KF5Archive)
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5Config)
@@ -38,6 +39,7 @@ BuildRequires:	cmake(Gpgmepp)
 BuildRequires:	cmake(KF5IdentityManagement)
 BuildRequires:	cmake(KF5Kross)
 BuildRequires:	cmake(KF5KrossUi)
+BuildRequires:	cmake(KF5WebKit)
 
 Requires:	perl-Finance-Quote
 Requires:	gwenhywfar-tools
@@ -193,7 +195,7 @@ KMyMoney development files.
 
 %build
 export LIBICAL_BASE=/usr
-%cmake_kde5
+%cmake_kde5 -DENABLE_WEBENGINE=1
 %ninja
 
 %install
