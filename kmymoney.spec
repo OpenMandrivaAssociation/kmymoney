@@ -6,6 +6,7 @@ License:	GPLv2+
 Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
 Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.xz
+Patch1:		kmymoney-5.0.0-missing_include.patch
 BuildRequires:	doxygen
 BuildRequires:	perl-Finance-Quote
 BuildRequires:	boost-devel
@@ -14,6 +15,10 @@ BuildRequires:	pkgconfig(aqbanking)
 BuildRequires:	pkgconfig(libofx)
 BuildRequires:	pkgconfig(libxml++-2.6)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	cmake(gwenhywfar)
+BuildRequires:	cmake(gwengui-qt5)
+BuildRequires:	cmake(gwengui-cpp)
+BuildRequires:	cmake(LibIcal)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(LibAlkimia5)
 BuildRequires:	cmake(KChart)
@@ -39,7 +44,11 @@ BuildRequires:	cmake(Gpgmepp)
 BuildRequires:	cmake(KF5IdentityManagement)
 BuildRequires:	cmake(KF5Kross)
 BuildRequires:	cmake(KF5KrossUi)
-BuildRequires:	cmake(KF5WebKit)
+BuildRequires:	cmake(KF5DocTools)
+BuildRequires:	cmake(KF5Holidays)
+BuildRequires:	cmake(KF5Contacts)
+BuildRequires:	cmake(KF5Akonadi)
+BuildRequires:	cmake(KF5Activities)
 
 Requires:	perl-Finance-Quote
 Requires:	gwenhywfar-tools
@@ -59,6 +68,7 @@ KMyMoney Personal Finance Manager.
 %{_datadir}/kmymoney
 %{_datadir}/kxmlgui5/*
 %{_datadir}/kconf_update/*
+%{_datadir}/weboob
 %{_datadir}/checkprinting
 %{_datadir}/metainfo/org.kde.kmymoney.appdata.xml
 %{_mandir}/man1/%{name}.1*
