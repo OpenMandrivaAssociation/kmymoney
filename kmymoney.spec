@@ -59,6 +59,8 @@ KMyMoney Personal Finance Manager.
 %files -f %{name}.lang
 %{_kde5_bindir}/*
 %{_kde5_libdir}/qt5/plugins/kmymoney
+%{_kde5_libdir}/libkmm_icons.so
+%{_kde5_libdir}/libkmm_csvimportercore.so
 %{_kde5_datadir}/config.kcfg/*.kcfg
 %{_kde5_applicationsdir}/*.desktop
 %{_kde5_iconsdir}/*/*/*/*
@@ -195,7 +197,14 @@ Requires:	%{libpayeeidentifier_nationalAccount} = %{version}
 KMyMoney development files.
 
 %files devel
-%{_kde5_libdir}/*.so
+%{_kde5_libdir}/libkmm_mymoney.so
+%{_kde5_libdir}/libkmm_payeeidentifier.so
+%{_kde5_libdir}/libkmm_plugin.so
+%{_kde5_libdir}/libkmm_widgets.so
+%{_kde5_libdir}/libpayeeidentifier_iban_bic.so
+%{_kde5_libdir}/libpayeeidentifier_iban_bic_widgets.so
+%{_kde5_libdir}/libpayeeidentifier_nationalAccount.so
+
 %{_kde5_includedir}/%{name}
 
 #-----------------------------------------------------------------------------
