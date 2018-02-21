@@ -7,6 +7,7 @@ Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
 Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.xz
 Patch1:		kmymoney-5.0.0-missing_include.patch
+Patch2:		kmymoney-5.0.0-sonames.patch
 BuildRequires:	doxygen
 BuildRequires:	perl-Finance-Quote
 BuildRequires:	boost-devel
@@ -59,8 +60,6 @@ KMyMoney Personal Finance Manager.
 %files -f %{name}.lang
 %{_kde5_bindir}/*
 %{_kde5_libdir}/qt5/plugins/kmymoney
-%{_kde5_libdir}/libkmm_icons.so
-%{_kde5_libdir}/libkmm_csvimportercore.so
 %{_kde5_datadir}/config.kcfg/*.kcfg
 %{_kde5_applicationsdir}/*.desktop
 %{_kde5_iconsdir}/*/*/*/*
@@ -75,6 +74,23 @@ KMyMoney Personal Finance Manager.
 %{_datadir}/checkprinting
 %{_datadir}/metainfo/org.kde.kmymoney.appdata.xml
 %{_mandir}/man1/%{name}.1*
+
+#-----------------------------------------------------------------------------
+
+%define kmm_csvimportercore_major 5
+%define libkmm_csvimportercore %mklibname kmm_csvimportercore %{kmm_csvimportercore_major}
+
+%package -n %{libkmm_csvimportercore}
+Summary:        KMyMoney library
+Group:          System/Libraries
+
+%description -n %{libkmm_csvimportercore}
+KMyMoney library.
+
+%files -n %{libkmm_csvimportercore}
+%{_kde5_libdir}/libkmm_csvimportercore.so.%{kmm_csvimportercore_major}*
+
+
 #-----------------------------------------------------------------------------
 
 %define kmm_mymoney_major 5
@@ -89,6 +105,21 @@ KMyMoney library.
 
 %files -n %{libkmm_mymoney}
 %{_kde5_libdir}/libkmm_mymoney.so.%{kmm_mymoney_major}*
+
+#-----------------------------------------------------------------------------
+
+%define kmm_icons_major 5
+%define libkmm_icons %mklibname kmm_icons %{kmm_icons_major}
+
+%package -n %{libkmm_icons}
+Summary:        KMyMoney library
+Group:          System/Libraries
+
+%description -n %{libkmm_icons}
+KMyMoney library.
+
+%files -n %{libkmm_icons}
+%{_kde5_libdir}/libkmm_icons.so.%{kmm_icons_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -189,6 +220,8 @@ Requires:	%{libkmm_mymoney} = %{version}
 Requires:	%{libkmm_plugin} = %{version}
 Requires:	%{libkmm_widgets} = %{version}
 Requires:	%{libkmm_payeeidentifier} = %{version}
+Requires:       %{libkmm_csvimportercore} = %{version}
+Requires:       %{libkmm_icons} = %{version}
 Requires:	%{libpayeeidentifier_iban_bic} = %{version}
 Requires:	%{libpayeeidentifier_iban_bic_widgets} = %{version}
 Requires:	%{libpayeeidentifier_nationalAccount} = %{version}
@@ -204,6 +237,8 @@ KMyMoney development files.
 %{_kde5_libdir}/libpayeeidentifier_iban_bic.so
 %{_kde5_libdir}/libpayeeidentifier_iban_bic_widgets.so
 %{_kde5_libdir}/libpayeeidentifier_nationalAccount.so
+%{_kde5_libdir}/libkmm_icons.so
+%{_kde5_libdir}/libkmm_csvimportercore.so
 
 %{_kde5_includedir}/%{name}
 
