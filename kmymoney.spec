@@ -42,7 +42,7 @@ BuildRequires:	cmake(KF5KrossUi)
 Requires:	perl-Finance-Quote
 Requires:	gwenhywfar-tools
 
-%description 
+%description
 KMyMoney Personal Finance Manager.
 
 %files -f %{name}.lang
