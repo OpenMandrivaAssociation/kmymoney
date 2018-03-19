@@ -70,7 +70,6 @@ KMyMoney Personal Finance Manager.
 %{_datadir}/kmymoney
 %{_datadir}/kxmlgui5/*
 %{_datadir}/kconf_update/*
-%{_datadir}/weboob
 %{_datadir}/checkprinting
 %{_datadir}/metainfo/org.kde.kmymoney.appdata.xml
 %{_mandir}/man1/%{name}.1*
@@ -250,7 +249,7 @@ KMyMoney development files.
 
 %build
 export LIBICAL_BASE=/usr
-%cmake_kde5 -DENABLE_WEBENGINE=1
+%cmake_kde5 -DENABLE_WEBENGINE=1 
 %ninja
 
 %install
