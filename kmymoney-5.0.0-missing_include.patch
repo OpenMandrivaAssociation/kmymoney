@@ -9,14 +9,3 @@
  #include "kmymoneyviewbase.h"
  
  /**
---- kmymoney-5.0.0/kmymoney/views/khomeview.cpp.orig	2018-02-21 12:25:39.404040840 +0000
-+++ kmymoney-5.0.0/kmymoney/views/khomeview.cpp	2018-02-21 12:25:53.393201175 +0000
-@@ -94,7 +94,7 @@
-       return;
-     }
-     #ifdef ENABLE_WEBENGINE
--    d->m_view->page()->print(m_currentPrinter, [=] (bool) {delete m_currentPrinter; m_currentPrinter = nullptr;});
-+    d->m_view->page()->print(d->m_currentPrinter, [=] (bool) {delete d->m_currentPrinter; d->m_currentPrinter = nullptr;});
-     #else
-       d->m_view->print(d->m_currentPrinter);
-     #endif
