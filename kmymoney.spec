@@ -1,7 +1,7 @@
 Summary:	The Personal Finances Manager
 Name:		kmymoney
 Version:	5.0.1
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
@@ -18,7 +18,7 @@ BuildRequires:	pkgconfig(libical)
 BuildRequires:	pkgconfig(libofx)
 BuildRequires:	pkgconfig(libxml++-2.6)
 BuildRequires:	pkgconfig(libxml-2.0)
-BuildRequires:	pkgconfig(python3)
+BuildRequires:	pkgconfig(python2)
 BuildRequires:	cmake(gwenhywfar)
 BuildRequires:	cmake(gwengui-qt5)
 BuildRequires:	cmake(gwengui-cpp)
