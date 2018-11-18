@@ -253,7 +253,7 @@ KMyMoney development files.
 
 %build
 export LIBICAL_BASE=/usr
-%cmake_kde5 
+%cmake_kde5 -DENABLE_WEBENGINE=1
 %ninja
 
 %install
