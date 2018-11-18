@@ -17,6 +17,7 @@ BuildRequires:	pkgconfig(libical)
 BuildRequires:	pkgconfig(libofx)
 BuildRequires:	pkgconfig(libxml++-2.6)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(sqlcipher)
 BuildRequires:	cmake(gwenhywfar)
 BuildRequires:	cmake(gwengui-qt5)
 BuildRequires:	cmake(gwengui-cpp)
@@ -62,6 +63,7 @@ KMyMoney Personal Finance Manager.
 %files -f %{name}.lang
 %{_kde5_bindir}/*
 %{_kde5_libdir}/qt5/plugins/kmymoney
+%{_kde5_libdir}/qt5/plugins/sqldrivers/qsqlcipher.so
 %{_kde5_datadir}/config.kcfg/*.kcfg
 %{_kde5_applicationsdir}/*.desktop
 %{_kde5_iconsdir}/*/*/*/*
@@ -75,7 +77,6 @@ KMyMoney Personal Finance Manager.
 %{_datadir}/checkprinting
 %{_datadir}/metainfo/org.kde.kmymoney.appdata.xml
 %{_mandir}/man1/%{name}.1*
-
 #-----------------------------------------------------------------------------
 
 %define kmm_csvimportercore_major 5
@@ -169,48 +170,50 @@ KMyMoney library.
 
 #-----------------------------------------------------------------------------
 
-%define payeeidentifier_iban_bic_major 5
-%define libpayeeidentifier_iban_bic %mklibname payeeidentifier_iban_bic %{payeeidentifier_iban_bic_major}
+%define kmm_menus_major 5
+%define libkmm_menus %mklibname kmm_menus %{kmm_menus_major}
 
-%package -n %{libpayeeidentifier_iban_bic}
-Summary: KMyMoney library
-Group: System/Libraries
+%package -n %{libkmm_menus}
+Summary:        KMyMoney library
+Group:          System/Libraries
 
-%description -n %{libpayeeidentifier_iban_bic}
+%description -n %{libkmm_menus}
 KMyMoney library.
 
-%files -n %{libpayeeidentifier_iban_bic}
-%{_kde5_libdir}/libpayeeidentifier_iban_bic.so.%{payeeidentifier_iban_bic_major}*
+%files -n %{libkmm_menus}
+%{_kde5_libdir}/libkmm_menus.so.%{kmm_menus_major}*
 
 #-----------------------------------------------------------------------------
 
-%define payeeidentifier_iban_bic_widgets_major 5
-%define libpayeeidentifier_iban_bic_widgets %mklibname payeeidentifier_iban_bic_widgets %{payeeidentifier_iban_bic_widgets_major}
 
-%package -n %{libpayeeidentifier_iban_bic_widgets}
-Summary: KMyMoney library
-Group: System/Libraries
+%define kmm_models_major 5
+%define libkmm_models %mklibname kmm_models %{kmm_models_major}
 
-%description -n %{libpayeeidentifier_iban_bic_widgets}
+%package -n %{libkmm_models}
+Summary:        KMyMoney library
+Group:          System/Libraries
+
+%description -n %{libkmm_models}
 KMyMoney library.
 
-%files -n %{libpayeeidentifier_iban_bic_widgets}
-%{_kde5_libdir}/libpayeeidentifier_iban_bic_widgets.so.%{payeeidentifier_iban_bic_widgets_major}*
+%files -n %{libkmm_models}
+%{_kde5_libdir}/libkmm_models.so.%{kmm_models_major}*
 
 #-----------------------------------------------------------------------------
 
-%define payeeidentifier_nationalAccount_major 5
-%define libpayeeidentifier_nationalAccount %mklibname payeeidentifier_nationalAccount %{payeeidentifier_nationalAccount_major}
 
-%package -n %{libpayeeidentifier_nationalAccount}
-Summary: KMyMoney library
-Group: System/Libraries
+%define kmm_settings_major 5
+%define libkmm_settings %mklibname kmm_settings %{kmm_settings_major}
 
-%description -n %{libpayeeidentifier_nationalAccount}
+%package -n %{libkmm_settings}
+Summary:        KMyMoney library
+Group:          System/Libraries
+
+%description -n %{libkmm_settings}
 KMyMoney library.
 
-%files -n %{libpayeeidentifier_nationalAccount}
-%{_kde5_libdir}/libpayeeidentifier_nationalAccount.so.%{payeeidentifier_nationalAccount_major}*
+%files -n %{libkmm_settings}
+%{_kde5_libdir}/libkmm_settings.so.%{kmm_settings_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -223,21 +226,20 @@ Requires:	%{libkmm_widgets} = %{version}
 Requires:	%{libkmm_payeeidentifier} = %{version}
 Requires:       %{libkmm_csvimportercore} = %{version}
 Requires:       %{libkmm_icons} = %{version}
-Requires:	%{libpayeeidentifier_iban_bic} = %{version}
-Requires:	%{libpayeeidentifier_iban_bic_widgets} = %{version}
-Requires:	%{libpayeeidentifier_nationalAccount} = %{version}
-
+Requires:       %{libkmm_menus} = %{version}
+Requires:       %{libkmm_models} = %{version}
+Requires:       %{libkmm_settings} = %{version}
 %description devel
 KMyMoney development files.
 
 %files devel
+%{_kde5_libdir}/libkmm_menus.so
+%{_kde5_libdir}/libkmm_models.so
+%{_kde5_libdir}/libkmm_settings.so
 %{_kde5_libdir}/libkmm_mymoney.so
 %{_kde5_libdir}/libkmm_payeeidentifier.so
 %{_kde5_libdir}/libkmm_plugin.so
 %{_kde5_libdir}/libkmm_widgets.so
-%{_kde5_libdir}/libpayeeidentifier_iban_bic.so
-%{_kde5_libdir}/libpayeeidentifier_iban_bic_widgets.so
-%{_kde5_libdir}/libpayeeidentifier_nationalAccount.so
 %{_kde5_libdir}/libkmm_icons.so
 %{_kde5_libdir}/libkmm_csvimportercore.so
 
@@ -251,7 +253,7 @@ KMyMoney development files.
 
 %build
 export LIBICAL_BASE=/usr
-%cmake_kde5 -DENABLE_WEBENGINE=1 
+%cmake_kde5 
 %ninja
 
 %install
