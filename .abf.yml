@@ -1,10 +1,2 @@
-removed_sources:
-  kmymoney-4.6.3.tar.bz2: 52faa3938c77b1ef513d1a46f5545ed823595c51
-  kmymoney-4.7.0.tar.xz: 2e9ddb4f38c0cccd17a8646d1d0a6ce6618ed6ae
-  kmymoney-4.7.1.tar.xz: 50a231c659ac6209c1c5f68861bf8a5f597587ea
-  kmymoney-4.7.2.tar.xz: f9854f59377343418b5bdd12a34887aa0a821ca6
-  kmymoney-4.8.0.tar.xz: fee9de67ed020251b7727cf109260aba8b076aba
-  kmymoney-5.0.0.tar.xz: 5ce77f12ba86960d72daecbcb86e73830d1d4b83
-  kmymoney-5.0.1.tar.xz: c20118890fcd140799e44c8d923956d914e9c8ab
 sources:
-  kmymoney-5.0.2.tar.xz: 6f40db4223207618f63a4cc313b700bb3e7041fa
+  kmymoney-5.0.4.tar.xz: 55436649595bb87c1b92a3c6827d4ce271506e1d
