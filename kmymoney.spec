@@ -217,6 +217,20 @@ KMyMoney library.
 %{_kde5_libdir}/libkmm_settings.so.%{kmm_settings_major}*
 
 #-----------------------------------------------------------------------------
+%define kmm_printer_major 5
+%define libkmm_printer %mklibname kmm_printer %{kmm_printer_major}
+
+%package -n %{libkmm_printer}
+Summary:        KMyMoney library
+Group:          System/Libraries
+
+%description -n %{libkmm_printer}
+KMyMoney library.
+
+%files -n %{libkmm_printer}
+%{_kde5_libdir}/libkmm_printer.so.%{kmm_printer_major}*
+
+#-----------------------------------------------------------------------------
 
 %package devel
 Summary:	KMyMoney Development library
