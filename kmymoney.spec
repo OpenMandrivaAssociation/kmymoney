@@ -244,6 +244,7 @@ Requires:       %{libkmm_icons} = %{version}
 Requires:       %{libkmm_menus} = %{version}
 Requires:       %{libkmm_models} = %{version}
 Requires:       %{libkmm_settings} = %{version}
+Requires:       %{libkmm_printer} = %{version}
 %description devel
 KMyMoney development files.
 
@@ -257,6 +258,7 @@ KMyMoney development files.
 %{_kde5_libdir}/libkmm_widgets.so
 %{_kde5_libdir}/libkmm_icons.so
 %{_kde5_libdir}/libkmm_csvimportercore.so
+%{_kde5_libdir}/libkmm_printer.so
 
 %{_kde5_includedir}/%{name}
 
