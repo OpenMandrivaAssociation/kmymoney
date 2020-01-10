@@ -266,7 +266,7 @@ KMyMoney development files.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 export LIBICAL_BASE=/usr
