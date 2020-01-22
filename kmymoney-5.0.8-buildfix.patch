@@ -1,0 +1,12 @@
+diff -up kmymoney-5.0.8/CMakeLists.txt.omv~ kmymoney-5.0.8/CMakeLists.txt
+--- kmymoney-5.0.8/CMakeLists.txt.omv~	2020-01-22 03:57:41.384798774 +0100
++++ kmymoney-5.0.8/CMakeLists.txt	2020-01-22 03:57:55.772798320 +0100
+@@ -78,7 +78,7 @@ if (PkgConfig_FOUND)
+ endif()
+ 
+ find_package(Qt5 5.6 REQUIRED
+-  COMPONENTS Core DBus Widgets Svg Xml Test PrintSupport
++  COMPONENTS Core DBus Widgets Svg Xml Test PrintSupport WebKitWidgets
+   OPTIONAL_COMPONENTS Sql Concurrent QuickWidgets)
+ 
+ find_package(KF5 5.2 REQUIRED

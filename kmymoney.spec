@@ -1,18 +1,19 @@
 Summary:	The Personal Finances Manager
 Name:		kmymoney
-Version:	5.0.7
+Version:	5.0.8
 Release:	1
 License:	GPLv2+
 Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
 Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.xz
 Patch1:		kmymoney-5.0.0-missing_include.patch
+Patch2:		kmymoney-5.0.8-buildfix.patch
 #Patch3:		kmymoney-5.0.0-workaround_missing_qsql.patch
 BuildRequires:	doxygen
 BuildRequires:	perl-Finance-Quote
 BuildRequires:	boost-devel
 BuildRequires:	gmpxx-devel
-BuildRequires:	pkgconfig(aqbanking)
+BuildRequires:	pkgconfig(aqbanking) >= 6.0.1
 BuildRequires:	pkgconfig(libical)
 BuildRequires:	pkgconfig(libofx)
 BuildRequires:	pkgconfig(libxml++-2.6)
@@ -28,6 +29,7 @@ BuildRequires:	cmake(LibAlkimia5)
 BuildRequires:	cmake(KChart)
 BuildRequires:	cmake(Qt5Core) cmake(Qt5DBus) cmake(Qt5Widgets) cmake(Qt5Svg) cmake(Qt5Sql) cmake(Qt5Xml) cmake(Qt5Test) cmake(Qt5PrintSupport)
 BuildRequires:	cmake(Qt5QuickWidgets)
+BuildRequires:	cmake(Qt5WebKitWidgets)
 BuildRequires:	cmake(Qt5WebEngineWidgets)
 BuildRequires:	cmake(KF5Archive)
 BuildRequires:	cmake(KF5CoreAddons)
