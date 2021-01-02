@@ -7,7 +7,7 @@ Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
 Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version}.tar.xz
 Patch1:		kmymoney-5.0.0-missing_include.patch
-#Patch2:		kmymoney-5.0.8-buildfix.patch
+Patch2:		kmymoney-5.0.8-buildfix.patch
 #Patch3:		kmymoney-5.0.0-workaround_missing_qsql.patch
 BuildRequires:	doxygen
 BuildRequires:	perl-Finance-Quote
