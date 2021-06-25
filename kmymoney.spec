@@ -73,7 +73,7 @@ KMyMoney Personal Finance Manager.
 %{_kde5_applicationsdir}/*.desktop
 %{_kde5_iconsdir}/*/*/*/*
 %{_kde5_services}/*.desktop
-%{_kde5_servicetypes}/*.desktop
+#{_kde5_servicetypes}/*.desktop
 %{_datadir}/mime/packages/*.xml
 %{_datadir}/kbanking
 %{_datadir}/kmymoney
