@@ -1,7 +1,7 @@
 Summary:	The Personal Finances Manager
 Name:		kmymoney
 Version:	5.1.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Office
 Url:		http://techbase.kde.org/Projects/KMyMoney
