@@ -9,7 +9,7 @@ Source0:	http://download.kde.org/stable/%{name}/%{version}/src/%{name}-%{version
 Patch1:		kmymoney-5.0.0-missing_include.patch
 #Patch2:		kmymoney-5.0.8-buildfix.patch
 #Patch3:		kmymoney-5.0.0-workaround_missing_qsql.patch
-Patch4:   Fix-compile-for-Newer-Akonadi-Builds.patch
+#Patch4:   Fix-compile-for-Newer-Akonadi-Builds.patch
 BuildRequires:	doxygen
 BuildRequires:	perl-Finance-Quote
 BuildRequires:	boost-devel
