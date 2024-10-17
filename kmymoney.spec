@@ -4,7 +4,7 @@ Version:	5.1.3
 Release:	9
 License:	GPLv2+
 Group:		Office
-Url:		http://techbase.kde.org/Projects/KMyMoney
+Url:		https://techbase.kde.org/Projects/KMyMoney
 Source0:	http://download.kde.org/stable/kmymoney/%{version}/src/%{name}-%{version}.tar.xz
 Patch1:		kmymoney-5.0.0-missing_include.patch
 #Patch2:		kmymoney-5.0.8-buildfix.patch
