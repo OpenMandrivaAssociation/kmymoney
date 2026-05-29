@@ -1,15 +1,19 @@
 Summary:	The Personal Finances Manager
 Name:		kmymoney
-Version:	5.1.3
-Release:	11
+Version:	5.2.0
+Release:	2
 License:	GPLv2+
 Group:		Office
 Url:		https://techbase.kde.org/Projects/KMyMoney
-Source0:	http://download.kde.org/stable/kmymoney/%{version}/src/%{name}-%{version}.tar.xz
-Patch1:		kmymoney-5.0.0-missing_include.patch
+Source0:	http://download.kde.org/stable/kmymoney/%{version}/%{name}-%{version}.tar.xz
+#Patch1:		kmymoney-5.0.0-missing_include.patch
 #Patch2:		kmymoney-5.0.8-buildfix.patch
 #Patch3:		kmymoney-5.0.0-workaround_missing_qsql.patch
 #Patch4:   Fix-compile-for-Newer-Akonadi-Builds.patch
+
+BuildSystem:    cmake
+BuildOption:    -DBUILD_WITH_QT6:BOOL=ON
+
 BuildRequires:	doxygen
 BuildRequires:	perl-Finance-Quote
 BuildRequires:	boost-devel
@@ -30,35 +34,41 @@ BuildRequires:  pkgconfig(libical-glib)
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(LibAlkimia5)
 BuildRequires:	cmake(KChart)
-BuildRequires:	cmake(Qt5Core) cmake(Qt5DBus) cmake(Qt5Widgets) cmake(Qt5Svg) cmake(Qt5Sql) cmake(Qt5Xml) cmake(Qt5Test) cmake(Qt5PrintSupport)
-BuildRequires:	cmake(Qt5QuickWidgets)
-BuildRequires:	cmake(Qt5WebKitWidgets)
-BuildRequires:	cmake(Qt5WebEngineWidgets)
-BuildRequires:	cmake(KF5Archive)
-BuildRequires:	cmake(KF5CoreAddons)
-BuildRequires:	cmake(KF5Config)
-BuildRequires:	cmake(KF5ConfigWidgets)
-BuildRequires:	cmake(KF5I18n)
-BuildRequires:	cmake(KF5Completion)
-BuildRequires:	cmake(KF5KCMUtils)
-BuildRequires:	cmake(KF5ItemModels)
-BuildRequires:	cmake(KF5ItemViews)
-BuildRequires:	cmake(KF5Service)
-BuildRequires:	cmake(KF5Wallet)
-BuildRequires:	cmake(KF5IconThemes)
-BuildRequires:	cmake(KF5XmlGui)
-BuildRequires:	cmake(KF5TextWidgets)
-BuildRequires:	cmake(KF5Notifications)
-BuildRequires:	cmake(KF5KIO)
+BuildRequires:	cmake(Qt6Core) 
+BuildRequires:  cmake(Qt6DBus)
+BuildRequires:  cmake(Qt6Widgets) 
+BuildRequires:  cmake(Qt6Svg) 
+BuildRequires:  cmake(Qt6Sql) 
+BuildRequires:  cmake(Qt6Xml) 
+BuildRequires:  cmake(Qt6Test) 
+BuildRequires:  cmake(Qt6PrintSupport)
+BuildRequires:	cmake(Qt6QuickWidgets)
+BuildRequires:	cmake(Qt6WebEngineWidgets)
+BuildRequires:	cmake(KF6Archive)
+BuildRequires:	cmake(KF6CoreAddons)
+BuildRequires:	cmake(KF6Config)
+BuildRequires:	cmake(KF6ConfigWidgets)
+BuildRequires:	cmake(KF6I18n)
+BuildRequires:	cmake(KF6Completion)
+BuildRequires:	cmake(KF6KCMUtils)
+BuildRequires:	cmake(KF6ItemModels)
+BuildRequires:	cmake(KF6ItemViews)
+BuildRequires:	cmake(KF6Service)
+BuildRequires:	cmake(KF6Wallet)
+BuildRequires:	cmake(KF6IconThemes)
+BuildRequires:	cmake(KF6XmlGui)
+BuildRequires:	cmake(KF6TextWidgets)
+BuildRequires:	cmake(KF6Notifications)
+BuildRequires:	cmake(KF6KIO)
 BuildRequires:	cmake(Gpgmepp)
-BuildRequires:	cmake(KF5IdentityManagement)
-BuildRequires:	cmake(KF5Kross)
-BuildRequires:	cmake(KF5KrossUi)
-BuildRequires:	cmake(KF5DocTools)
-BuildRequires:	cmake(KF5Holidays)
-BuildRequires:	cmake(KF5Contacts)
-BuildRequires:	cmake(KF5Akonadi)
-BuildRequires:	cmake(KF5Activities)
+BuildRequires:	cmake(KF6IdentityManagement)
+BuildRequires:	cmake(KF6Kross)
+BuildRequires:	cmake(KF6KrossUi)
+BuildRequires:	cmake(KF6DocTools)
+BuildRequires:	cmake(KF6Holidays)
+BuildRequires:	cmake(KF6Contacts)
+BuildRequires:	cmake(KF6Akonadi)
+BuildRequires:	cmake(KF6Activities)
 
 Requires:	perl-Finance-Quote
 Requires:	gwenhywfar-tools
@@ -67,14 +77,14 @@ Requires:	gwenhywfar-tools
 KMyMoney Personal Finance Manager.
 
 %files -f %{name}.lang
-%{_kde5_bindir}/*
-%{_kde5_libdir}/qt5/plugins/kmymoney
-%{_kde5_libdir}/qt5/plugins/sqldrivers/qsqlcipher.so
-%{_kde5_datadir}/config.kcfg/*.kcfg
-%{_kde5_applicationsdir}/*.desktop
-%{_kde5_iconsdir}/*/*/*/*
-%{_kde5_services}/*.desktop
-#{_kde5_servicetypes}/*.desktop
+%{_kde6_bindir}/*
+%{_kde6_libdir}/qt5/plugins/kmymoney
+%{_kde6_libdir}/qt5/plugins/sqldrivers/qsqlcipher.so
+%{_kde6_datadir}/config.kcfg/*.kcfg
+%{_kde6_applicationsdir}/*.desktop
+%{_kde6_iconsdir}/*/*/*/*
+%{_kde6_services}/*.desktop
+#{_kde6_servicetypes}/*.desktop
 %{_datadir}/mime/packages/*.xml
 %{_datadir}/kbanking
 %{_datadir}/kmymoney
@@ -96,7 +106,7 @@ Group:          System/Libraries
 KMyMoney library.
 
 %files -n %{libkmm_csvimportercore}
-%{_kde5_libdir}/libkmm_csvimportercore.so.%{kmm_csvimportercore_major}*
+%{_kde6_libdir}/libkmm_csvimportercore.so.%{kmm_csvimportercore_major}*
 
 
 #-----------------------------------------------------------------------------
@@ -112,7 +122,7 @@ Group:		System/Libraries
 KMyMoney library.
 
 %files -n %{libkmm_mymoney}
-%{_kde5_libdir}/libkmm_mymoney.so.%{kmm_mymoney_major}*
+%{_kde6_libdir}/libkmm_mymoney.so.%{kmm_mymoney_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -127,7 +137,7 @@ Group:          System/Libraries
 KMyMoney library.
 
 %files -n %{libkmm_icons}
-%{_kde5_libdir}/libkmm_icons.so.%{kmm_icons_major}*
+%{_kde6_libdir}/libkmm_icons.so.%{kmm_icons_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -142,7 +152,7 @@ Group:		System/Libraries
 KMyMoney library.
 
 %files -n %{libkmm_plugin}
-%{_kde5_libdir}/libkmm_plugin.so.%{kmm_plugin_major}*
+%{_kde6_libdir}/libkmm_plugin.so.%{kmm_plugin_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -157,7 +167,7 @@ Group:		System/Libraries
 KMyMoney library.
 
 %files -n %{libkmm_widgets}
-%{_kde5_libdir}/libkmm_widgets.so.%{kmm_widgets_major}*
+%{_kde6_libdir}/libkmm_widgets.so.%{kmm_widgets_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -172,7 +182,7 @@ Group: System/Libraries
 KMyMoney library.
 
 %files -n %{libkmm_payeeidentifier}
-%{_kde5_libdir}/libkmm_payeeidentifier.so.%{kmm_payeeidentifier_major}*
+%{_kde6_libdir}/libkmm_payeeidentifier.so.%{kmm_payeeidentifier_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -187,7 +197,7 @@ Group:          System/Libraries
 KMyMoney library.
 
 %files -n %{libkmm_menus}
-%{_kde5_libdir}/libkmm_menus.so.%{kmm_menus_major}*
+%{_kde6_libdir}/libkmm_menus.so.%{kmm_menus_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -203,7 +213,7 @@ Group:          System/Libraries
 KMyMoney library.
 
 %files -n %{libkmm_models}
-%{_kde5_libdir}/libkmm_models.so.%{kmm_models_major}*
+%{_kde6_libdir}/libkmm_models.so.%{kmm_models_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -219,7 +229,7 @@ Group:          System/Libraries
 KMyMoney library.
 
 %files -n %{libkmm_settings}
-%{_kde5_libdir}/libkmm_settings.so.%{kmm_settings_major}*
+%{_kde6_libdir}/libkmm_settings.so.%{kmm_settings_major}*
 
 #-----------------------------------------------------------------------------
 %define kmm_printer_major 5
@@ -233,7 +243,7 @@ Group:          System/Libraries
 KMyMoney library.
 
 %files -n %{libkmm_printer}
-%{_kde5_libdir}/libkmm_printer.so.%{kmm_printer_major}*
+%{_kde6_libdir}/libkmm_printer.so.%{kmm_printer_major}*
 
 #-----------------------------------------------------------------------------
 
@@ -254,31 +264,22 @@ Requires:       %{libkmm_printer} = %{version}
 KMyMoney development files.
 
 %files devel
-%{_kde5_libdir}/libkmm_menus.so
-%{_kde5_libdir}/libkmm_models.so
-%{_kde5_libdir}/libkmm_settings.so
-%{_kde5_libdir}/libkmm_mymoney.so
-%{_kde5_libdir}/libkmm_payeeidentifier.so
-%{_kde5_libdir}/libkmm_plugin.so
-%{_kde5_libdir}/libkmm_widgets.so
-%{_kde5_libdir}/libkmm_icons.so
-%{_kde5_libdir}/libkmm_csvimportercore.so
-%{_kde5_libdir}/libkmm_printer.so
+%{_kde6_libdir}/libkmm_menus.so
+%{_kde6_libdir}/libkmm_models.so
+%{_kde6_libdir}/libkmm_settings.so
+%{_kde6_libdir}/libkmm_mymoney.so
+%{_kde6_libdir}/libkmm_payeeidentifier.so
+%{_kde6_libdir}/libkmm_plugin.so
+%{_kde6_libdir}/libkmm_widgets.so
+%{_kde6_libdir}/libkmm_icons.so
+%{_kde6_libdir}/libkmm_csvimportercore.so
+%{_kde6_libdir}/libkmm_printer.so
 
-%{_kde5_includedir}/%{name}
+%{_kde6_includedir}/%{name}
 
 #-----------------------------------------------------------------------------
 
-%prep
-%setup -q
-%autopatch -p1
+# %install -a
+# %find_lang %{name} --with-html --with-man
 
-%build
-export LIBICAL_BASE=/usr
-%cmake_kde5 -DENABLE_WEBENGINE=1
-%ninja
 
-%install
-%ninja_install -C build
-
-%find_lang %{name} --with-html --with-man
