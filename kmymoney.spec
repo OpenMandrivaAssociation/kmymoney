@@ -1,7 +1,6 @@
 %define api 5
 %define libname %mklibname kmymoney
 
-
 Summary:	The Personal Finances Manager
 Name:		kmymoney
 Version:	5.2.2
@@ -9,11 +8,7 @@ Release:	1
 License:	GPLv2+
 Group:		Office
 Url:		https://techbase.kde.org/Projects/KMyMoney
-Source0:	http://download.kde.org/stable/kmymoney/%{version}/%{name}-%{version}.tar.xz
-#Patch1:		kmymoney-5.0.0-missing_include.patch
-#Patch2:		kmymoney-5.0.8-buildfix.patch
-#Patch3:		kmymoney-5.0.0-workaround_missing_qsql.patch
-#Patch4:   Fix-compile-for-Newer-Akonadi-Builds.patch
+Source0:	https://download.kde.org/stable/kmymoney/%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:	appstream
 BuildRequires:	cmake ninja
@@ -139,8 +134,8 @@ Obsoletes:	%{libkmm_mymoney}
 Obsoletes:	%{libkmm_plugin}
 Obsoletes:	%{libkmm_widgets}
 Obsoletes:	%{libkmm_payeeidentifier}
-Obsoletes:      %{libkmm_csvimportercore}
-Obsoletes:      %{libkmm_icons}
+Obsoletes:  %{libkmm_csvimportercore}
+Obsoletes:  %{libkmm_icons}
 Obsoletes:	%{libkmm_menus}
 Obsoletes:	%{libkmm_models}
 Obsoletes:	%{libkmm_settings}
@@ -227,4 +222,3 @@ export LIBICAL_BASE=/usr
 %ninja_install -C build
 
 %find_lang %{name} --with-html --with-man
-
