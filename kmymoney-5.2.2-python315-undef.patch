@@ -1,0 +1,23 @@
+--- a/kmymoney/plugins/woob/interface/woobinterface.cpp
++++ b/kmymoney/plugins/woob/interface/woobinterface.cpp
+@@ -13,8 +13,20 @@
+ // Python uses slots var that is QT macro
+ #pragma push_macro("slots")
+ #undef slots
++#if defined(__clang__)
++#pragma clang diagnostic push
++#pragma clang diagnostic ignored "-Wundef"
++#elif defined(__GNUC__)
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Wundef"
++#endif
+ #include <Python.h>
+ #include <patchlevel.h>
++#if defined(__clang__)
++#pragma clang diagnostic pop
++#elif defined(__GNUC__)
++#pragma GCC diagnostic pop
++#endif
+ #pragma pop_macro("slots")
+ 
+ #include <memory>

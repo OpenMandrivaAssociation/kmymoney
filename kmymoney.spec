@@ -9,6 +9,8 @@ License:	GPLv2+
 Group:		Office
 Url:		https://techbase.kde.org/Projects/KMyMoney
 Source0:	https://download.kde.org/stable/kmymoney/%{version}/%{name}-%{version}.tar.xz
+# Python 3.15 tests __STDC_VERSION__ with elif. C++ leaves it undefined.
+Patch0:		kmymoney-5.2.2-python315-undef.patch
 
 BuildRequires:	appstream
 BuildRequires:	cmake ninja
